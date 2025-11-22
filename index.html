@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>압축공기 압력손실 계산기 (10 m 기준)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS 파일 -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <h1>압축공기 압력손실 계산기</h1>
+        <p class="subtitle">경험식 기반 10 m 구간 압력손실 계산 (MPa / 10 m)</p>
+
+        <div class="card">
+            <div class="input-group">
+                <label for="diameter">배관 내경 d [mm]</label>
+                <input type="number" id="diameter" placeholder="예: 50" step="0.01" min="0">
+            </div>
+
+            <div class="input-group">
+                <label for="flowrate">공기 유량 Q [L/min]</label>
+                <input type="number" id="flowrate" placeholder="예: 500" step="0.01" min="0">
+            </div>
+
+            <div class="input-group">
+                <label for="pressure">인입 압력 P [MPa]</label>
+                <input type="number" id="pressure" placeholder="예: 0.7" step="0.001" min="0">
+            </div>
+
+            <button id="calcButton">계산하기</button>
+
+            <div id="result" class="result-box">
+                결과가 여기에 표시됩니다.
+            </div>
+
+            <div id="error" class="error-box" style="display: none;"></div>
+        </div>
+
+        <div class="formula-card">
+            <h2>사용한 경험식</h2>
+            <p class="formula">
+                ΔP = 0.00237 × Q² × L / [ d^5.31 × (P + 0.1013) ]
+            </p>
+            <ul class="formula-desc">
+                <li>d : 배관 내경 (mm)</li>
+                <li>Q : 공기 유량 (L/min)</li>
+                <li>P : 인입 압력 (MPa)</li>
+                <li>L : 배관 길이 (m) — 여기서는 고정값 10 m 사용</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- JS 파일 -->
+    <script src="js/app.js"></script>
+</body>
+</html>
