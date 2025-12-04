@@ -50,10 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         resultBox.innerHTML = `
             <strong>계산 결과</strong><br>
-            압력손실 ΔP = <strong>${deltaP_10m_str} MPa / 10 m</strong><br><br>
+            압력손실 ΔP = <strong>${deltaP_10m_str} MPa / 10 m</strong><br>
             <span style="font-size: 0.85rem; color:#555;">
-                사용식: ΔP = 0.00237 × Q² × L / [ d^5.31 × (P + 0.1013) ]<br>
-                (L = 10 m 고정)
             </span>
         `;
     });
